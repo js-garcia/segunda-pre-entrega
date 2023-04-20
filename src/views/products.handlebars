@@ -1,0 +1,31 @@
+<h1 class="text-center">Lista de productos</h1>
+  <div class="container">
+    <div class="row">
+      {{#each payload}}
+      <div class="col-sm-4 product">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">{{title}}</h5>
+            <p class="card-text">{{description}}</p>
+            <p class="card-text">{{price}}</p>
+          </div>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+
+    <div class="row">
+      <div class="col">
+        {{#if hasPrevPage}}
+        <a href="?page={{prevPage}}" class="btn btn-primary">Previous Page</a>
+        {{/if}}
+      </div>
+      <div class="col text-right">
+        {{#if hasNextPage}}
+        <a href="?page={{nextPage}}" class="btn btn-primary">Next Page</a>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+
+<script src="/js/products.js"></script>
